@@ -33,7 +33,7 @@ I'm a full stack developer experienced in deploying artificial intelligence powe
 
 **Live demo**
 
-[Click here for Live demo](https://tapiwachamb-drug-discovery.herokuapp.com/)
+[Click here for Live demo](https://drugdiscoveryapp.streamlit.app/)
 ## Installation
 
 Install required packages 
