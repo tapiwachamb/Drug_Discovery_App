@@ -16,7 +16,7 @@ import requests
 def app():
     st.title('Home')
     st.markdown("""
-                ## Drug Discovery App Using Lipinski's Rule-of-Five.
+                ## Drug Discovery App Using Lipinski's Rule-of-Five By Tapiwa Chamboko.
                 
 
 
