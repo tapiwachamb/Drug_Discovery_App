@@ -48,6 +48,18 @@ Install required packages
   pip install mols2grid
   pip install rdkit-pypi
 ```
+## For streamlit add packages.txt
+
+```bash
+freeglut3-dev
+libgtk2.0-dev
+libgl1-mesa-glx
+libxrender1
+tesseract-ocr
+libtesseract-dev
+libtesseract4
+tesseract-ocr-all
+```
     
 ## Datasets
 - The drug.txt Dataset in data folder is bieng used
