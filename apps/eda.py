@@ -9,7 +9,7 @@ def app():
     st.title("Drug Discovery")
 
 
-    @st.cache(allow_output_mutation=True)
+    @st.cache_data
     def download_dataset():
         """Loads once then cached for subsequent runs"""
         df = pd.read_csv(
@@ -41,6 +41,8 @@ def app():
 
 # Copy the dataset so any changes are not applied to the original cached version
     df = download_dataset().copy()
+    df["SMILES"] = df["smiles"]  # Create a "SMILES" column
+    df["Name"] = df["generic_name"]  # Create a "Name" column
     df["MW"] = df.apply(lambda x: calc_mw(x["smiles"]), axis=1)
     df["LogP"] = df.apply(lambda x: calc_logp(x["smiles"]), axis=1)
     df["NumHDonors"] = df.apply(lambda x: calc_NumHDonors(x["smiles"]), axis=1)
@@ -96,7 +98,6 @@ def app():
 
 
     raw_html = mols2grid.display(df_result4,
-                                #subset=["Name", "img"],
                                 subset=["img", "Name", "MW", "LogP", "NumHDonors", "NumHAcceptors"],
                                 mapping={"smiles": "SMILES", "generic_name": "Name"})._repr_html_()
     components.html(raw_html, width=900, height=1100, scrolling=False)
